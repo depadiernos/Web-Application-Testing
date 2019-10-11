@@ -16,6 +16,7 @@ const updateCount = (name, count)=>{
 
   return (
     <div className="App">
+      <h1>Baseball Count Dashboard</h1>
       <Display data={data} />
       <Dashboard data={data} handleClick={updateCount}/>
     </div>
