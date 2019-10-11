@@ -1,5 +1,5 @@
-import React from 'react';
-import Display from '../Display';
+import React from "react";
+import Display from "../Display";
 
 import * as rtl from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
@@ -10,44 +10,28 @@ const mockData = {
   strikeCount: 2,
   foulCount: 4,
   hitCount: 10
-}
+};
 
 test("Render Ball Count", () => {
-
-  const wrapper = rtl.render(<Display data={mockData}/>);
-  // using a regular expression instead of a string allows our
-  // query to be much more flexible. for example, if the text becomes
-  // all uppercase, we don't want our test to break
+  const wrapper = rtl.render(<Display data={mockData} />);
   const element = wrapper.getByText(/ball/i);
   expect(element).toHaveTextContent("Ball: 3");
 });
 
 test("Render Strike Count", () => {
-
-  const wrapper = rtl.render(<Display data={mockData}/>);
-  // using a regular expression instead of a string allows our
-  // query to be much more flexible. for example, if the text becomes
-  // all uppercase, we don't want our test to break
+  const wrapper = rtl.render(<Display data={mockData} />);
   const element = wrapper.getByText(/strike/i);
   expect(element).toHaveTextContent("Strike: 2");
 });
 
 test("Render Foul Count", () => {
-
-  const wrapper = rtl.render(<Display data={mockData}/>);
-  // using a regular expression instead of a string allows our
-  // query to be much more flexible. for example, if the text becomes
-  // all uppercase, we don't want our test to break
+  const wrapper = rtl.render(<Display data={mockData} />);
   const element = wrapper.getByText(/foul/i);
   expect(element).toHaveTextContent("Foul: 4");
 });
 
 test("Render Hit Count", () => {
-
-  const wrapper = rtl.render(<Display data={mockData}/>);
-  // using a regular expression instead of a string allows our
-  // query to be much more flexible. for example, if the text becomes
-  // all uppercase, we don't want our test to break
+  const wrapper = rtl.render(<Display data={mockData} />);
   const element = wrapper.getByText(/hit/i);
   expect(element).toHaveTextContent("Hit: 10");
 });
